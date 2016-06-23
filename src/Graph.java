@@ -81,6 +81,9 @@ public class Graph {
 		
 		index = findVertex(from);
 		adj[index].add(new AdjList(to,weight));
+		
+		index = findVertex(to);
+		adj[index].add(new AdjList(from,weight));
 	}
 	
 	private int findVertex(String v){
