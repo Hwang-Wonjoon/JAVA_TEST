@@ -13,14 +13,18 @@ public class Graph {
 	public static void main(String[] args) throws Exception{
 		// TODO Auto-generated method stub
 		Graph graph = new Graph();
+		long start_time = System.currentTimeMillis();
 		graph.run();
+		long end_time = System.currentTimeMillis();
+		
+		System.out.println("Elapsed Tiime: " + (end_time - start_time));
 	}
 	
 	@SuppressWarnings("unchecked")
 	private void run() throws Exception{
 		
-		FileReader fis = new FileReader("res/aaa.txt");
-		BufferedReader br = new BufferedReader(fis);
+		FileReader fr = new FileReader("res/aaa.txt");
+		BufferedReader br = new BufferedReader(fr);
 		
 		CountOfVertex = Integer.parseInt(br.readLine());
 		
@@ -28,15 +32,21 @@ public class Graph {
 		
 		int countOfEdge = Integer.parseInt(br.readLine());
 		
-		String edge;
+		String[] edge;
 		
 		int count=0;
 		
-		while((edge = br.readLine()) != null){
+		for(int i = 0; i < countOfEdge; i++){
+			edge = br.readLine().split(" ");
+			/*
 			StringTokenizer st = new StringTokenizer(edge);
 			String from = st.nextToken();
 			String to = st.nextToken();
 			int weight = Integer.parseInt(st.nextToken());
+			*/
+			String from = edge[0];
+			String to = edge[1];
+			int weight = Integer.parseInt(edge[2]);
 //			System.out.println("From: " + from + " To: " + to + " Weight: " + weight);
 			makeGraph(from, to, weight);
 		}
