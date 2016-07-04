@@ -4,6 +4,12 @@
   <artifactId>Java_Test</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <url>http://maven.apache.org</url>
+  <repositories>
+  	<repository>
+   	  <id>Jsch</id>
+   	  <url>http://jsch.sf.net/maven2/</url>
+	</repository>
+  </repositories>
   <dependencies>
   
   	<!-- https://mvnrepository.com/artifact/com.jcraft/jsch -->
