@@ -4,6 +4,14 @@ import java.util.Scanner;
 
 public class Solution {
 
+	int test_case;
+	int num_explosive;
+	ArrayList<Integer>[] list = new ArrayList[num_explosive];
+	
+	int[] a;
+	int[] b;
+	int[] c;
+	
 	public static void main(String[] args) throws Exception{
 		// TODO Auto-generated method stub
 		
@@ -17,14 +25,14 @@ public class Solution {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		int test_case = sc.nextInt();
-		int num_explosive = sc.nextInt();
+		test_case = sc.nextInt();
+		num_explosive = sc.nextInt();
 		// 1 <= num_fire <= 10,000
 		
 		
-		int[] a = new int[2*num_explosive - 1];
-		int[] b = new int[2*num_explosive - 1];
-		int[] c = new int[2*num_explosive - 1];
+		a = new int[2*num_explosive - 1];
+		b = new int[2*num_explosive - 1];
+		c = new int[2*num_explosive - 1];
 		
 		// 1 <= c <=1,000,000,000
 		// if a <= num_explosive                                =>     Explosive a is connected to Line
@@ -42,14 +50,31 @@ public class Solution {
 		}
 		System.out.println("Start Location: " + (start + 1));
 		
-		ArrayList<Integer>[] list = new ArrayList[num_explosive];
 		for(int i = 0; i < num_explosive; i++){
 			list[i] = new ArrayList<Integer>();
 		}
-		if(a[i] == 2*num_explosive){
-		}
 		
-		
+		make_tree(start);
+		check_tree();
 	}
 
+	public void make_tree(int pos){
+		
+		if( a[pos] <= num_explosive ){
+			list[pos].add(c[pos]);
+			return;
+		}else{
+			list[pos].add(c[pos]);
+			make_tree(a[pos]);
+		}
+		
+		if(b[pos <= num_explosive]){
+			
+		}
+		
+	}
+	
+	public void check_tree(){
+		
+	}
 }
