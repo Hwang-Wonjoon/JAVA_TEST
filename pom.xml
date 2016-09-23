@@ -19,6 +19,13 @@
     	<version>0.1.53</version>
 	</dependency>
 	
+	<!-- https://mvnrepository.com/artifact/org.scala-lang/scala-compiler -->
+<dependency>
+    <groupId>org.scala-lang</groupId>
+    <artifactId>scala-compiler</artifactId>
+    <version>2.11.1</version>
+</dependency>
+	
   </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
